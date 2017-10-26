@@ -53,18 +53,26 @@ public class TestField3 extends JFrame implements DeConversion, ActionListener
 	}
 	private void mostrarEmergente(String s)
 	{
-		JOptionPane.showMessageDialog(null,s);
+		JOptionPane.showMessageDialog(null,s,"UnTitulo..", getDefaultCloseOperation());
 	}
+//	private void mostrarEmergente(String s,String titulo)
+//	{
+//		JOptionPane.showMessageDialog(null,s,titulo);
+//	}
 	public static void main(String[] args) throws InterruptedException
 	{
-		(new TestField3()).mostrar();
-		disponiblePorSegundos(20);
-		
+//		(new TestField3()).mostrar();
+//		disponiblePorSegundos(20);
+		System.out.println(	(new TestField3()).entradaDeDialogo("Holaa"));
 	}
 	public static   void disponiblePorSegundos(long  segundos) throws InterruptedException
 	{
 		Thread.sleep(segundos*1000);
 		System.exit(0);
+	}
+	private String entradaDeDialogo(String mensajeDeTextField)
+	{
+		return JOptionPane.showInputDialog(mensajeDeTextField);
 	}
 
 }
